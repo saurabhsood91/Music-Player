@@ -92,8 +92,10 @@ void mainwindow::aboutToFinish()
 void mainwindow::metaStateChanged(Phonon::State newState, Phonon::State oldState)
 {
     qDebug()<<"Called";
+        if(!list.empty()){
     QTableWidgetItem *item=new QTableWidgetItem(list.first().fileName());
     int ct=tableSongs->rowCount();
     tableSongs->insertRow(ct);
     tableSongs->setItem(ct,0,item);
+        }
 }
