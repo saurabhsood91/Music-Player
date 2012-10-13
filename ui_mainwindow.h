@@ -1,8 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'mainwindow.ui'
 **
-** Created
-**      by: Qt User Interface Compiler version 4.8.2
+** Created by: Qt User Interface Compiler version 4.8.2
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -24,6 +23,7 @@
 #include <QtGui/QWidget>
 #include <phonon/seekslider.h>
 #include <phonon/volumeslider.h>
+#include <QtGui/QApplication>
 
 QT_BEGIN_NAMESPACE
 
@@ -54,6 +54,9 @@ public:
             MainWindow->setObjectName(QString::fromUtf8("MainWindow"));
         MainWindow->resize(650, 269);
         MainWindow->setMaximumSize(QSize(16777215, 16777215));
+        QIcon icon;
+        icon.addFile(QString::fromUtf8(":/images/splash-bird.gif"), QSize(), QIcon::Normal, QIcon::Off);
+        MainWindow->setWindowIcon(icon);
         MainWindow->setStyleSheet(QString::fromUtf8("QMainWindow\n"
 "{\n"
 "color: white;\n"
@@ -234,7 +237,7 @@ public:
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QString::fromUtf8("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 650, 20));
+        menuBar->setGeometry(QRect(0, 0, 650, 21));
         menuFile = new QMenu(menuBar);
         menuFile->setObjectName(QString::fromUtf8("menuFile"));
         menuHelp = new QMenu(menuBar);
