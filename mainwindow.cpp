@@ -12,7 +12,7 @@ mainwindow::mainwindow(){
     hd = new helpdialog;
     m=new mediaobject;
     setupUi(this);
-    setWindowTitle("Music Player");
+    setWindowTitle("Blue Music Box");
     m=new mediaobject;
     QObject::connect(actionAbout, SIGNAL(triggered()), this, SLOT(helpShow()));
     QObject::connect(actionExit,SIGNAL(triggered()),this,SLOT(close()));
