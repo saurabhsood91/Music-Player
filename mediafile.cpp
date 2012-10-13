@@ -1,5 +1,5 @@
 #include "mediafile.h"
-
+#include <iostream>
 
 mediaobject::mediaobject()
 {
@@ -10,6 +10,7 @@ mediaobject::mediaobject()
 void mediaobject::playFile(QString filename)
 {
     mobj->setCurrentSource(Phonon::MediaSource(filename));
+
     audioOutput =new Phonon::AudioOutput(Phonon::MusicCategory, this);
     path = Phonon::createPath(mobj, audioOutput);
     mobj->play();
