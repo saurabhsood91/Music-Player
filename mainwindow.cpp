@@ -37,11 +37,22 @@ void mainwindow::helpShow(){
 
 void mainwindow::addFiles()
 {
+    TagLib::Tag *tag;
     QStringList filenames=QFileDialog::getOpenFileNames(this);
     foreach(QString string,filenames)
     {
         Phonon::MediaSource source(string);
         list.append(source);
+
+        TagLib::FileRef f(string.toStdString().c_str());
+        tag = f.tag();
+        std::cout << "Artist name is " << tag->artist().toCString() << std::endl;
+        QTableWidgetItem *item=new QTableWidgetItem(QString::fromLocal8Bit(tag->title().toCString()));
+        QTableWidgetItem *item1=new QTableWidgetItem(QString::fromLocal8Bit(tag->artist().toCString()));
+        int ct=tableSongs->rowCount();
+        tableSongs->insertRow(ct);
+        tableSongs->setItem(ct,0,item);
+        tableSongs->setItem(ct, 1, item1);
     }
     m->mobj->setQueue(list);
 
@@ -50,9 +61,6 @@ void mainwindow::addFiles()
     //QString title=metaData.value("Title");
     //qDebug()<<title;
 
-    TagLib::FileRef f(filenames.at(0).toStdString().c_str());
-    TagLib::Tag *tag = f.tag();
-    std::cout << "Artist name is " << tag->artist().toCString() << std::endl;
 }
 
 void mainwindow::playCurrent()
@@ -103,14 +111,8 @@ void mainwindow::aboutToFinish()
 
 void mainwindow::metaStateChanged(Phonon::State newState, Phonon::State oldState)
 {
-    TagLib::Tag *tag;
+
     if(!list.empty()){
-        TagLib::FileRef f(list.first().fileName().toStdString().c_str());
-        tag = f.tag();
-        std::cout << "Artist name is " << tag->artist().toCString() << std::endl;
-        QTableWidgetItem *item=new QTableWidgetItem(QString::fromLocal8Bit(tag->title().toCString()));
-        int ct=tableSongs->rowCount();
-        tableSongs->insertRow(ct);
-        tableSongs->setItem(ct,0,item);
+
     }
 }
