@@ -20,7 +20,7 @@
    <string>MainWindow</string>
   </property>
   <property name="windowIcon">
-   <iconset resource="images.qrc">
+   <iconset>
     <normaloff>:/images/splash-bird.gif</normaloff>:/images/splash-bird.gif</iconset>
   </property>
   <property name="styleSheet">
@@ -173,13 +173,26 @@ font-size:12px;
     </property>
     <column>
      <property name="text">
-      <string>File  Name</string>
+      <string>Track</string>
      </property>
      <property name="font">
       <font>
        <weight>75</weight>
        <bold>true</bold>
       </font>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>Artist  Name</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>Album  Name</string>
+     </property>
+     <property name="textAlignment">
+      <set>AlignLeft|AlignVCenter</set>
      </property>
     </column>
     <column>
@@ -195,19 +208,6 @@ font-size:12px;
     <column>
      <property name="text">
       <string>Song  Duration</string>
-     </property>
-    </column>
-    <column>
-     <property name="text">
-      <string>Album  Name</string>
-     </property>
-     <property name="textAlignment">
-      <set>AlignLeft|AlignVCenter</set>
-     </property>
-    </column>
-    <column>
-     <property name="text">
-      <string>Artist  Name</string>
      </property>
     </column>
    </widget>
@@ -291,7 +291,7 @@ font-size:12px;
      <x>0</x>
      <y>0</y>
      <width>650</width>
-     <height>21</height>
+     <height>20</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuFile">
@@ -355,8 +355,6 @@ font-size:12px;
    <header location="global">phonon/volumeslider.h</header>
   </customwidget>
  </customwidgets>
- <resources>
-  <include location="images.qrc"/>
- </resources>
+ <resources/>
  <connections/>
 </ui>
