@@ -151,6 +151,7 @@ public:
 "font-family: arial;\n"
 "font-size:12px;\n"
 "}"));
+        Dialog->setSizeGripEnabled(true);
         label = new QLabel(Dialog);
         label->setObjectName(QString::fromUtf8("label"));
         label->setGeometry(QRect(0, 0, 91, 151));

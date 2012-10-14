@@ -57,7 +57,9 @@ public:
         QIcon icon;
         icon.addFile(QString::fromUtf8(":/images/splash-bird.gif"), QSize(), QIcon::Normal, QIcon::Off);
         MainWindow->setWindowIcon(icon);
+        MainWindow->setSizePolicy(QSizePolicy::Fixed,QSizePolicy::Fixed);
         MainWindow->setStyleSheet(QString::fromUtf8("QMainWindow\n"
+
 "{\n"
 "color: white;\n"
 "background-color:QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #88d, stop: 0.1 #99e, stop: 0.39 #67c, stop: 0.5 #66b, stop: 1 #77c);\n"
@@ -256,7 +258,8 @@ public:
         retranslateUi(MainWindow);
 
         QMetaObject::connectSlotsByName(MainWindow);
-    } // setupUi
+
+     } // setupUi
 
     void retranslateUi(QMainWindow *MainWindow)
     {
