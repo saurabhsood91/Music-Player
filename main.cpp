@@ -24,6 +24,5 @@ int main(int argc, char *argv[])
     splash->finish(w);
     delete splash;
     w->show();
-
     return a.exec();
 }

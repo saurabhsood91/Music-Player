@@ -6,6 +6,7 @@
 #include <QMainWindow>
 #include "mediafile.h"
 #include<phonon/MediaSource>
+#include<QSystemTrayIcon>
 class mainwindow: public QMainWindow, Ui::MainWindow{
     Q_OBJECT
 private:
@@ -15,6 +16,8 @@ public: mainwindow();
     helpdialog *hd;
     mediaobject *m;
     QList<Phonon::MediaSource> list;
+     ~mainwindow();
+    //bool event(QEvent *evt);
 public slots:
     void helpShow();
     void addFiles();
@@ -24,6 +27,27 @@ public slots:
     void stopFile();
     void aboutToFinish();
     void metaStateChanged(Phonon::State newState,Phonon::State oldState);
+
+private:
+    Ui::MainWindow *ui;
+
+    // Tray Icon Functions
+    void createTrayActions();
+    void createTrayIcon();
+    void setTrayIcon();
+
+    void closeEvent(QCloseEvent *);
+    void changeEvent(QEvent *);
+
+    QSystemTrayIcon *trayIcon;
+    QMenu *trayIconMenu;
+    QAction *showHideTray;
+    QAction *closeTray;
+
+private slots:
+    void trayIconClicked(QSystemTrayIcon::ActivationReason);
+    void showHideWindow();
+
 };
 
 #endif // MAINWINDOW_H
