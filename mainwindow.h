@@ -27,7 +27,7 @@ public slots:
     void stopFile();
     void aboutToFinish();
     void metaStateChanged(Phonon::State newState,Phonon::State oldState);
-
+    void onlineMusic();
 private:
     Ui::MainWindow *ui;
 

@@ -11,6 +11,7 @@
 #include <QEvent>
 #include <cstdio>
 #include <QKeyEvent>
+#include "musicsearchwindow.h"
 
 mainwindow::mainwindow(){
     currentState=0;
@@ -29,6 +30,7 @@ mainwindow::mainwindow(){
     QObject::connect(m,SIGNAL(currentSourceChanged(Phonon::MediaSource)),this,SLOT(fetchNext(Phonon::MediaSource)));
     QObject::connect(m->mobj,SIGNAL(aboutToFinish()),this,SLOT(aboutToFinish()));
     QObject::connect(m->mobj,SIGNAL(stateChanged(Phonon::State,Phonon::State)),this,SLOT(metaStateChanged(Phonon::State,Phonon::State)));
+    QObject::connect(actionOnline,SIGNAL(triggered()),this,SLOT(onlineMusic()));
     seekSlider->setMediaObject(m->mobj);
     volumeSlider->setAudioOutput(m->audioOutput);
     show();
@@ -43,6 +45,15 @@ mainwindow::mainwindow(){
     setTrayIcon();
     trayIcon->show();
 }
+
+void mainwindow::onlineMusic()
+{
+    musicsearchwindow *ob=new musicsearchwindow;
+
+    ob->show();
+
+}
+
 void mainwindow::changeEvent(QEvent *event)
 {
     QMainWindow::changeEvent(event);

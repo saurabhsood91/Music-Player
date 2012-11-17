@@ -300,6 +300,7 @@ font-size:12px;
     </property>
     <addaction name="actionAdd_Files"/>
     <addaction name="actionExit"/>
+    <addaction name="actionOnline"/>
    </widget>
    <widget class="QMenu" name="menuHelp">
     <property name="title">
@@ -339,6 +340,11 @@ font-size:12px;
   <action name="actionStop">
    <property name="text">
     <string>Stop</string>
+   </property>
+  </action>
+  <action name="actionOnline">
+   <property name="text">
+    <string>Online Music</string>
    </property>
   </action>
  </widget>

@@ -36,6 +36,7 @@ public:
     QAction *actionPlay;
     QAction *actionPause;
     QAction *actionStop;
+    QAction *actionOnline;
     QWidget *centralWidget;
     Phonon::SeekSlider *seekSlider;
     QTableWidget *tableSongs;
@@ -185,6 +186,8 @@ public:
         actionPause->setObjectName(QString::fromUtf8("actionPause"));
         actionStop = new QAction(MainWindow);
         actionStop->setObjectName(QString::fromUtf8("actionStop"));
+        actionOnline = new QAction(MainWindow);
+        actionOnline->setObjectName(QString::fromUtf8("actionOnline"));
         centralWidget = new QWidget(MainWindow);
         centralWidget->setObjectName(QString::fromUtf8("centralWidget"));
         seekSlider = new Phonon::SeekSlider(centralWidget);
@@ -251,6 +254,7 @@ public:
         menuBar->addAction(menuHelp->menuAction());
         menuFile->addAction(actionAdd_Files);
         menuFile->addAction(actionExit);
+        menuFile->addAction(actionOnline);
         menuHelp->addAction(actionAbout);
 
         retranslateUi(MainWindow);
@@ -267,6 +271,7 @@ public:
         actionPlay->setText(QApplication::translate("MainWindow", "Play", 0, QApplication::UnicodeUTF8));
         actionPause->setText(QApplication::translate("MainWindow", "Pause", 0, QApplication::UnicodeUTF8));
         actionStop->setText(QApplication::translate("MainWindow", "Stop", 0, QApplication::UnicodeUTF8));
+        actionOnline->setText(QApplication::translate("MainWindow", "Online Music", 0, QApplication::UnicodeUTF8));
         QTableWidgetItem *___qtablewidgetitem = tableSongs->horizontalHeaderItem(0);
         ___qtablewidgetitem->setText(QApplication::translate("MainWindow", "File  Name", 0, QApplication::UnicodeUTF8));
         QTableWidgetItem *___qtablewidgetitem1 = tableSongs->horizontalHeaderItem(1);
