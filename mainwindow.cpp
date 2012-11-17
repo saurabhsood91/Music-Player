@@ -6,8 +6,11 @@
 #include <taglib/fileref.h>
 #include <taglib/id3v2tag.h>
 #include <taglib/tstring.h>
-#include<QEvent>
-#include<QKeyEvent>
+#include <taglib/audioproperties.h>
+#include <string>
+#include <QEvent>
+#include <cstdio>
+#include <QKeyEvent>
 
 mainwindow::mainwindow(){
     currentState=0;
@@ -148,13 +151,24 @@ void mainwindow::addFiles()
 
         TagLib::FileRef f(string.toStdString().c_str());
         tag = f.tag();
+
+        char year[15];
+        qDebug() << tag->year();
+        sprintf(year, "%u", tag->year());
+        std::string yr = year;
+
         std::cout << "Artist name is " << tag->artist().toCString() << std::endl;
         QTableWidgetItem *item=new QTableWidgetItem(QString::fromLocal8Bit(tag->title().toCString()));
         QTableWidgetItem *item1=new QTableWidgetItem(QString::fromLocal8Bit(tag->artist().toCString()));
+        QTableWidgetItem *item2=new QTableWidgetItem(QString::fromStdString(tag->album().toCString()));
+        QTableWidgetItem *item3=new QTableWidgetItem(QString::fromStdString(yr));
         int ct=tableSongs->rowCount();
+        tableSongs->setColumnCount(4);
         tableSongs->insertRow(ct);
         tableSongs->setItem(ct,0,item);
         tableSongs->setItem(ct, 1, item1);
+        tableSongs->setItem(ct, 2, item2 );
+        tableSongs->setItem(ct, 3, item3);
     }
     m->mobj->setQueue(list);
 

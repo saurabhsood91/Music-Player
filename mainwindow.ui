@@ -184,21 +184,6 @@ font-size:12px;
     </column>
     <column>
      <property name="text">
-      <string>Ratings</string>
-     </property>
-    </column>
-    <column>
-     <property name="text">
-      <string>Year  Of  Release</string>
-     </property>
-    </column>
-    <column>
-     <property name="text">
-      <string>Song  Duration</string>
-     </property>
-    </column>
-    <column>
-     <property name="text">
       <string>Album  Name</string>
      </property>
      <property name="textAlignment">
@@ -208,6 +193,21 @@ font-size:12px;
     <column>
      <property name="text">
       <string>Artist  Name</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>Year of Release</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>Duration</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>Rating</string>
      </property>
     </column>
    </widget>
@@ -291,7 +291,7 @@ font-size:12px;
      <x>0</x>
      <y>0</y>
      <width>650</width>
-     <height>21</height>
+     <height>20</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuFile">
