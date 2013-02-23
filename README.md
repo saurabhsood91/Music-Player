@@ -5,7 +5,7 @@ Author(s): Nitesh Narayanlal & Saurabh Sood License: Apache License Version 2.0
 
 compiling
 
-To build Blue, you must have the necessary dependencies installed and then checkout the source dir:
+To build Blue, you must have the necessary dependencies (Qt, Taglib) installed and then checkout the source dir:
 
     sudo yum install git qt-devel
     git clone http://github.com/niteshnarayanlal/Blue-Music-Box
