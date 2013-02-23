@@ -1,5 +1,5 @@
 Blue-Music-Box
-Blue is a desktop music player developed using Qt .
+Blue is a cross platform desktop music player developed using Qt
 
 Author(s): Nitesh Narayanlal & Saurabh Sood License: Apache License Version 2.0
 
